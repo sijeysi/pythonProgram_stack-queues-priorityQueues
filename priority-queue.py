@@ -16,3 +16,4 @@ print(messages.dequeue())   # Output: Brake pedal depressed
 print(messages.dequeue())   # Output: Hazard lights turned on
 print(messages.dequeue())   # Output: Windshield wipers turned on
 print(messages.dequeue())   # Output: Radio station tuned in
+
