@@ -7,5 +7,3 @@ lifo.append("3rd")
 print(lifo.pop())   # Output: 3rd
 print(lifo.pop())   # Output: 2nd
 print(lifo.pop())   # Output: 1st
-
-print("done")
