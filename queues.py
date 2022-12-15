@@ -29,3 +29,7 @@ class Queue:
         return self.__elements.popleft()
 
 # A class using inheritance and override the .dequeue() method to remove elements from the top of the stack
+class Stack(Queue):
+    def dequeue(self):
+        return self.__elements.pop()
+        
