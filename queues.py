@@ -10,9 +10,7 @@ class IterableMixin:
         while len(self) > 0:
             yield self.dequeue()
 
-# A class that will delegate the enqueue and dequeue operations to dequeue.append() and dequeue.popleft()
 class Queue(IterableMixin):
-    # Making the class iterable and able to report its length and accept initial elements
     def __init__(self, *elements):
         self.__elements = deque(elements)
 
@@ -29,13 +27,11 @@ class Queue(IterableMixin):
     def dequeue(self):
         return self.__elements.popleft()
 
-# A class using inheritance and override the .dequeue() method to remove elements from the top of the stack
 class Stack(Queue):
     def dequeue(self):
         return self._elements.pop()
 
-# class PriorityQueue
-class PriorityQueue(IterableMixin()):
+class PriorityQueue(IterableMixin):
     def __init__(self):
         self._elements = []
         self._counter = count()
