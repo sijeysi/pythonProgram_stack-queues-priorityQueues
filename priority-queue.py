@@ -12,8 +12,7 @@ messages.enqueue_with_priority(IMPORTANT, "Hazard lights turned on")
 
 print(messages.dequeue()) # Output: (1, 'Radio station turned in')
 
-print(messages.dequeue())
-print(messages.dequeue())
-print(messages.dequeue())
-print(messages.dequeue())
-
+print(messages.dequeue())   # Output: Brake pedal depressed
+print(messages.dequeue())   # Output: Hazard lights turned on
+print(messages.dequeue())   # Output: Windshield wipers turned on
+print(messages.dequeue())   # Output: Radio station tuned in
