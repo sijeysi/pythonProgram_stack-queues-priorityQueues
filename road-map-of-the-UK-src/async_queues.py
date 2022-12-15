@@ -42,3 +42,15 @@ async def main(args):
 
         await queue.put(Job(args.url))
         await queue.join()
+
+        for task in tasks:
+            task.cancel()
+
+        await asyncio.gather(*tasks, return_exceptions=True)
+
+        display(links)
+
+    finally:
+        await session.close()
+    
+    
