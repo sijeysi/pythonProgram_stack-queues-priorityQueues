@@ -9,3 +9,8 @@ fifo.enqueue("3rd")
 print(fifo.dequeque())
 print(fifo.dequeque())
 print(fifo.dequeque())
+
+# Expected Output
+# 1st
+# 2nd 
+# 3rd
