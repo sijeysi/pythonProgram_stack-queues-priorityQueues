@@ -3,7 +3,8 @@ from heapq import heappush
 fruits = []
 
 heappush(fruits, "orange")
-heappush(fruits, "appple")
+heappush(fruits, "apple")
 heappush(fruits, "banana")
 
-print(fruits)
+print(fruits)   # Output: ['apple', 'orange', 'banana']
+
