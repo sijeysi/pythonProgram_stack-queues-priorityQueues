@@ -3,10 +3,15 @@ from heapq import heappop, heappush
 from itertools import count
 
 class IterableMixin:
+    def __len__(self):
+        return len(self._elements)
     
+    def __iter__(self):
+        while len(self) > 0:
+            yield self.dequeue()
 
 # A class that will delegate the enqueue and dequeue operations to dequeue.append() and dequeue.popleft()
-class Queue():
+class Queue(IterableMixin):
     # Making the class iterable and able to report its length and accept initial elements
     def __init__(self, *elements):
         self.__elements = deque(elements)
@@ -30,7 +35,7 @@ class Stack(Queue):
         return self._elements.pop()
 
 # class PriorityQueue
-class PriorityQueue:
+class PriorityQueue(IterableMixin()):
     def __init__(self):
         self._elements = []
         self._counter = count()
