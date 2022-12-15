@@ -2,6 +2,9 @@ from collections import deque
 from heapq import heappop, heappush
 from itertools import count
 
+class IterableMixin:
+    
+
 # A class that will delegate the enqueue and dequeue operations to dequeue.append() and dequeue.popleft()
 class Queue():
     # Making the class iterable and able to report its length and accept initial elements
