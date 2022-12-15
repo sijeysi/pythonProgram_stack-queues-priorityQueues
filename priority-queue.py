@@ -10,4 +10,4 @@ messages.enqueue_with_priority(NEUTRAL, "Radio station turned in")
 messages.enqueue_with_priority(CRITICAL, "Brake pedal depressed")
 messages.enqueue_with_priority(IMPORTANT, "Hazard lights turned on")
 
-print(messages.dequeue())
+print(messages.dequeue()) # Output: (1, 'Radio station turned in')
