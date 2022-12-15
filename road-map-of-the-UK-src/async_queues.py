@@ -39,7 +39,6 @@ async def main(args):
             )
             for i in range(args.num_workers)
         ]
-
         await queue.put(Job(args.url))
         await queue.join()
 
@@ -52,6 +51,7 @@ async def main(args):
 
     finally:
         await session.close()
+
 
 async def worker(worker_id, session, queue, links, max_depth):
     print(f"[{worker_id} starting]", file=sys.stderr)
@@ -72,11 +72,10 @@ async def worker(worker_id, session, queue, links, max_depth):
             queue.task_done()
 
 
-
 async def fetch_html(session, url):
     async with session.get(url) as response:
         if response.ok and response.content_type == "text/html":
-            return await response.wait()
+            return await response.text()
     
     
 def parse_links(url, html):
@@ -101,4 +100,3 @@ def display(links):
 
 if __name__== "__main__":
     asyncio.run(main(parse_args()))
-
