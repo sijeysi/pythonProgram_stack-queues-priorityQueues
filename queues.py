@@ -1,5 +1,6 @@
 # A class that will delegate the enqueue and dequeue operations to dequeue.append() and dequeue.popleft()
 from collections import deque
+from heapq import heappop, heappush
 from itertools import count
 
 class IterableMixin:
@@ -19,7 +20,6 @@ class Queue:
 
     def dequeue(self):
         return self.__elements.popleft()
-
 
 
 # Making the class iterable and able to report its length and accept initial elements
@@ -44,3 +44,5 @@ class Queue(IterableMixin):
 class Stack(Queue):
     def dequeue(self):
         return self.__elements.pop()
+
+# class PriorityQueue
