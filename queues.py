@@ -11,10 +11,7 @@ class Queue:
     def dequeue(self):
         return self.__elements.popleft()
 
-# Making the class iterable and able to report its length and accept initial elements
-from collections import deque
-
-class Queue:
+    # Making the class iterable and able to report its length and accept initial elements
     def __init__(self, *elements):
         self.__elements = deque(elements)
 
