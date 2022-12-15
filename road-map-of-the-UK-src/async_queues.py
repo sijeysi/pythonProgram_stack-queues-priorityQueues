@@ -53,6 +53,14 @@ async def main(args):
     finally:
         await session.close()
 
+async def worker(worker_id, session, queue, links, max_depth):
+    print(f"[{worker_id} starting]", file=sys.stderr)
+    while True:
+        url, depth = await queue.get()
+        links[url] += 1
+        
+
+
 async def fetch_html(session, url):
     async with session.get(url) as response:
         if response.ok and response.content_type == "text/html":
@@ -73,7 +81,12 @@ def parse_args():
     parser.add_argument("-w", "--num-workers", type=int, default=3)
     return parser.parse_args()
 
+
 def display(links):
     for url, count in links.most_common():
         print(f"{count:>3} {url}")
-        
+
+
+if __name__== "__main__":
+    asyncio.run(main(parse_args()))
+
