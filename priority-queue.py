@@ -9,3 +9,5 @@ messages.enqueue_with_priority(IMPORTANT, "Winshield wipers turned on")
 messages.enqueue_with_priority(NEUTRAL, "Radio station turned in")
 messages.enqueue_with_priority(CRITICAL, "Brake pedal depressed")
 messages.enqueue_with_priority(IMPORTANT, "Hazard lights turned on")
+
+print(messages.dequeue())
