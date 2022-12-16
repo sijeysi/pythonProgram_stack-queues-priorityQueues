@@ -1,6 +1,7 @@
 # Shortest Path Using Breadth-First Traversal
 import networkx as nx
 from graph import City, load_graph
+from graph import connected
 
 print("\n8th testing: Using networkx to reveal all the shortest paths between two cities")
 nodes, graph = load_graph("roadmap.dot", City.from_dict)
@@ -19,4 +20,8 @@ print(" → ".join(
     city.name
     for city in shortest_path(graph, city1, city2, by_latitude))
     )
-    
+
+print("\n10th testing: Using breadth-first traversal to check whether two nodes remain connected or not")
+print(connected(graph, nodes["belfast"], nodes["glasgow"]))
+
+print(connected(graph, nodes["belfast"], nodes["derry"]))
