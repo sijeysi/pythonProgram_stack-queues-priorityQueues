@@ -5,11 +5,6 @@ from graph import (
     load_graph,
     breadth_first_traverse,
     breadth_first_search as bfs,
-    shortest_path,
-    connected,
-    depth_first_traverse,
-    depth_first_search as dfs,
-    dijkstra_shortest_path
 )
 
 def is_twentieth_century(year):
