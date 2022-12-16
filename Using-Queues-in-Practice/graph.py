@@ -33,6 +33,7 @@ def load_graph(filename, node_factory):
         for name1, name2, weights in graph.edges(data=True)
     )
 
+
 # Breadth-First Search Using a FIFO Queue
 def breadth_first_traverse(graph, source):
     queue = Queue(source)
@@ -48,6 +49,7 @@ def breadth_first_search(graph, source, predicate):
     for node in breadth_first_traverse(graph, source):
         if predicate(node):
             return node
+
 
 # Shortest Path Using Breadth-First Traversal
 def shortest_path(graph, source, destination, order_by=None):
@@ -84,3 +86,10 @@ def retrace(previous, source, destination):
 
 def connected(graph, source, destination):
     return shortest_path(graph, source, destination) is not None
+
+
+# Depth-First Search Using a LIFO Queue
+def depth_first_traverse(graph, source, order_by=None):
+    stack = Stack(source)
+    visited = set()
+    
