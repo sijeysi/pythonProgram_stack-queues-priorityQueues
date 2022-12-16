@@ -1,5 +1,5 @@
 
-import networkx as nx
+import n
 from graph import City, load_graph
 
 print(nx.nx_agraph.read_dot("roadmap.dot"))
