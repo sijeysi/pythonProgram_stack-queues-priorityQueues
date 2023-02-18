@@ -1,4 +1,5 @@
-# pythonProgram_stack-queues-priorityQueues
+# Python Program
+# Stack, Queues, and Priority Queues
 
 DICLAMER: All rights are reserved for the Real Python community and its management, and this repository is solely meant to be used for educational purposes.
 
